@@ -2,7 +2,7 @@
    Bump CACHE_NAME version string to invalidate on update.
    -------------------------------------------------------- */
 
-const CACHE_NAME = 'leanstory-v2';
+const CACHE_NAME = 'leanstory-v3';
 
 const PRECACHE_URLS = [
   '/',
@@ -13,6 +13,12 @@ const PRECACHE_URLS = [
   '/auth.js',
   '/sidebar.js',
   '/auto-save.js',
+  '/nav.js',
+  '/story-selector.js',
+  '/story-preview.js',
+  '/extend.js',
+  '/deliver.js',
+  '/feedback.js',
   '/prompts.js',
   '/consistency.js',
   '/manifest.json',

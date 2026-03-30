@@ -6,17 +6,11 @@ import { api } from './api-client.js'
 
 const STORY_FIELDS = ['context', 'target', 'empathy', 'problem', 'consequences', 'solution', 'benefits', 'why']
 
-let _collapsed = false
-
 /* ============================================================
    INIT
    ============================================================ */
 
 export async function loadSidebar() {
-  const sidebar = document.getElementById('sidebar')
-  if (!sidebar) return
-  sidebar.hidden = false
-
   try {
     const stories = await api.get('/stories')
     _renderSidebar(stories)
@@ -259,19 +253,6 @@ async function _deleteStory(storyId) {
 }
 
 /* ============================================================
-   SIDEBAR TOGGLE
-   ============================================================ */
-
-function _toggleSidebar() {
-  _collapsed = !_collapsed
-  const sidebar = document.getElementById('sidebar')
-  const toggle = document.getElementById('sidebar-toggle')
-  if (sidebar) sidebar.classList.toggle('sidebar--collapsed', _collapsed)
-  if (toggle) toggle.textContent = _collapsed ? '›' : '‹'
-  document.body.classList.toggle('sidebar-open', !_collapsed)
-}
-
-/* ============================================================
    MODAL HELPERS
    ============================================================ */
 
@@ -378,14 +359,11 @@ function _relativeTime(isoStr) {
 // Wire "+ New Story" button
 document.getElementById('btn-new-story')?.addEventListener('click', _createNewStory)
 
-// Wire sidebar toggle
-document.getElementById('sidebar-toggle')?.addEventListener('click', _toggleSidebar)
-
 // Load sidebar on auth login
 document.addEventListener('auth:login', () => loadSidebar())
 
-// Reload on auth logout
+// Reload on auth logout — clear the list
 document.addEventListener('auth:logout', () => {
-  const sidebar = document.getElementById('sidebar')
-  if (sidebar) sidebar.hidden = true
+  const list = document.getElementById('sidebar-list')
+  if (list) list.innerHTML = ''
 })

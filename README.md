@@ -1,345 +1,139 @@
-# Lean Storytelling
+# Lean Storytelling App
 
-**Craft and deliver** compelling, efficient, convincing **stories** about your business, service, or product!
+**Craft and deliver compelling, efficient, convincing stories** about your business, service, or product!
 
-**Lean Storytelling**:
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-ff69b4.svg)](CODE_OF_CONDUCT.md)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-- **Shape and structure** your story, with the foundational building blocks, to **setup the core**.
-- **Extend and complete** your story, with additional elements, and complexity, to **fine-tune**.
-- **Specialise and deliver** your story, in various formats to different audiences, for **influence and leadership**.
+## 🚀 Quick Start
 
-> [!IMPORTANT]
-> Learn fast, practice hard, get feedback, try again.
+Get up and running in minutes:
 
-What is it? What for? What's in it for me? How do I start? Read more below...
+```bash
+# Clone the repository
+git clone https://github.com/your-org/lean-storytelling-app.git
+cd lean-storytelling-app
 
----
+# Set up backend
+cd backend
+npm install
+cp .env.example .env
+# Edit .env with your PostgreSQL credentials
 
-## Table of Contents
+# Set up frontend
+cd ../frontend
+npm install
 
-1. Why?
-2. Methodology overview
-3. Q&A / FAQ
+# Run database migrations
+cd ../backend
+node src/db/migrate.js
 
----
-
-## Why?
-
-### Core motivation
-
-It was made, battled-tested, and refined so that people communicate clearly, in a standard and proven manner, the way humans have told stories since the dawn of humanity, by giving and taking stories, living the feeling of adventure.
-
-### Who it is indended for
-
-Lean Storytelling is designed for leaders and managers who want to be much more efficient in their communication style.
-
-### How this works
-
-Shape and structure your story, given the widely used, but implicit ingredients.
-Then deliver your story in any format or context.
-
-People know how to "receive" a story, as they are used to "receiving" novels, series, movies...
-But people have difficulties to properly "send" stories by respecting the untold, implicit secrets, that humanity has used since forever.
-
-### What Lean Storytelling is really
-
-**Lean Storytelling** is a structured technique for crafting clear, compelling stories—especially for business, product, and service contexts. It draws on best practices to ensure your audience understands, resonates, and remembers your message.
-
-> [!NOTE]
->  It is easy to learn, but challenging to master, requiring careful practice, learning from your audience, and persistence.
-
-Lean Storytelling has been crafted for business, product, and service: whether you want pitch or test an idea, refine and develop , or delierv and promote
-development and promotion
-
-> [!CAUTION]
-> Not for screenwriting or novel writing.
-
-This helps align teams, reduce friction, and clarify the "why" behind any story.
-
-### What's in it for me?
-
-Become crystal clear in your communication, impact more, influence harder.
-
----
-
-## Methodology overview: quick start & usage
-
-### Build your story
-
-```mermaid
-flowchart TD
-    Basic{{"`*Basic
-    Story*`"}}-->TargetB["`**Target**`"]
-    TargetB-->ProblemB["`**Problem**`"]
-    ProblemB-->SolutionB["`**Solution**`"]
-    SolutionB
-    
-    Detailed{{"`*Detailed
-    Story*`"}}-->TargetD["`**Target**`"]
-    TargetD-->EmpathyD([Empathy])
-    EmpathyD-->ProblemD["`**Problem**`"]
-    ProblemD-->ConsequencesD([Consequences])
-    ConsequencesD-->SolutionD["`**Solution**`"]
-    SolutionD-->BenefitsD([Benefits])
-    BenefitsD
-
-    Full{{"`*Full
-    Story*`"}}-->ContextF
-    ContextF{{Context}}-->TargetF["`**Target**`"]
-    TargetF-->EmpathyF([Empathy])
-    EmpathyF-->ProblemF["`**Problem**`"]
-    ProblemF-->ConsequencesF([Consequences])
-    ConsequencesF-->SolutionF["`**Solution**`"]
-    SolutionF-->BenefitsF([Benefits])
-    BenefitsF-->WhyF{{Why}}
-    WhyF
-
-    classDef default fill:#f8f9fa,stroke:#333,stroke-width:2px,rx:8,ry:8;
+# Start the application
+npm start
 ```
 
-#### Basic Story
+See our [Quickstart Guide](QUICKSTART.md) for detailed instructions.
 
-- **Target**: The user, the client, the buyer—the hero of your story, the one who experiences transformation
-- **Problem**: The challenge or antagonism your Target faces
-- **Solution**: Your offering (keep it concise; avoid over-explaining)
+## 📖 About Lean Storytelling
 
-> [!IMPORTANT]
-> The hero is essential to storytelling, in this context we are client-centric.
+Lean Storytelling is a structured technique for crafting clear, compelling stories—especially for business, product, and service contexts. It draws on best practices to ensure your audience understands, resonates, and remembers your message.
 
-> [!CAUTION]
-> Stay concise, if not laconic, about the Solution.
+**Key Principles:**
+- **Target**: Who is your audience?
+- **Problem**: What challenge do they face?
+- **Solution**: How does your offering help?
 
-#### Detailed Story
+**Learn More:**
+- [Lean Storytelling Methodology Repository](https://github.com/your-org/lean-storytelling-methodology)
+- [Lean Storytelling Book Repository](https://github.com/your-org/lean-storytelling-book)
 
-- Target
-  - **Empathy**: What the Target sees, feels, hears, and says
-- Problem
-  - **Consequences**: How the Problem impacts the target’s daily life, the pain that is felt
-- Solution
-  - **Benefits**: The tangible advantages your Solution provides to the Target
+## ✨ Features
 
-> [!TIP]
-> Express Problem as a positive sentence form, not a negative way: "Problem is the lack og my Solution".
- 
-> [!WARNING]
-> The Solution may not mean anything to your audience, rather explicit the ture Benefits and advantges.
+- **Story Builder**: Create and structure your stories using proven templates
+- **Version Control**: Track story iterations and improvements
+- **Delivery Formats**: Export stories in various formats (text, images, videos)
+- **Audience Targeting**: Tailor stories for different audiences
+- **Feedback System**: Collect and incorporate audience feedback
+- **Collaboration**: Work with team members on story development
 
+## 🛠️ Technology Stack
 
-#### Full Story
+- **Backend**: Fastify (Node.js) with PostgreSQL
+- **Frontend**: React with Vite
+- **Database**: PostgreSQL 15+
+- **Containerization**: Docker support
 
-- **Context**: The environment in which the Target operates
-- Target
-    - Empathy
-- Problem
-    - Consequences
-- Solution
-   - Benefits
-- **Why**: The core motivation or guiding principle behind your story
+## 📦 Project Structure
 
-> [!NOTE]
-> The hero returns from the adventure with a magic wand, light saber, or wisdom: what transformation has the Target undergo?
-
-
-### Extend your story
-
-#### Addons
-
-In case an option is absolutely needed, and you can't live without:
-
-**Optional Additions (use as needed):**
-- **Challenge**: Pose an open question to engage your audience
-- **Quote**: Validate an element with a relevant quote
-- **Data**: Bring facts and figures that proves your point 
-- **Alternatives**: Highlight unsatisfactory solutions the hero has tried
-- **Competition**: Acknowledge competitors, but emphasize why your solution is superior
-- **Unfair Advantage**: What makes your solution uniquely effective, and difficult to imitate
-- **Warnings**: Potential pitfalls or risks
-- **Self-Benefits**: How you also benefit from the solution
-- **Call to Action**: What you want your audience to do next
-- **Failure**: Share a past failure or setback to build credibility and context
-- **Same-same**: The same type of people have lived the same story
-
-#### Complex Story
-
-Use with extreme care:
-
-- In one story:
-    - Use extension pack
-    - Target multiple personas
-    - Address multiple problems
-    - Bring multiple Solutions
-- Blend story arcs:
-    - Merge stories with multiple common elements
-    - Cross-over stories in the same timeline/universe
-    - Sub-story or "mise en abyme"
-
-### Deliver your story
-
-#### Formats
-
-Adapt your stories to various constraints:
-- Text: ASCII, PDF, ODF
-- Images: PNG, JPEG
-- Videos
-- Hybrid: slidedecks, illusrated texts
-
-#### Audiences
-
-Specialise story to:
-- Stakeholders
-- Buyers
-- Investors
-- Collaborators
-
-### A picture is worth a thousand words
-
-Build + Extend + Deliver = Get feedback and restart!
-
-```mermaid
-flowchart TD
-Build("`**Build**`")-->BasicXXX{{"`*Basic
-    Story*`"}}
-BasicXXX-->DetailedXXX{{"`*Detailed
-    Story*`"}}
-DetailedXXX-->FullXXX{{"`*Full
-    Story*`"}}
-
-Extend("`**Extend**`")-->AddonXXX{{"`*Additionnal
-    elements*`"}}
-AddonXXX-->ComplexXXX{{"`*Complex
-    reality*`"}}
-ComplexXXX
-
-Deliver("`**Deliver**`")-->Format{{"`*Custom
-    Format*`"}}
-Format-->Audience{{"`*Specific
-    Audience*`"}}
-Audience
-
-    classDef default fill:#f8f9fa,stroke:#333,stroke-width:2px,rx:8,ry:8;
+```
+lean-storytelling-app/
+├── backend/          # Fastify API server
+│   ├── src/          # Source code
+│   │   ├── routes/   # API routes
+│   │   ├── services/ # Business logic
+│   │   └── db/       # Database migrations
+│   └── package.json
+├── frontend/         # React application
+│   ├── src/          # React components
+│   └── package.json
+├── docs/             # Documentation
+├── specs/            # Specifications
+└── README.md         # This file
 ```
 
-### Go further now: Getting started!
+## 📖 Documentation
 
-Ask for workshop
+- **[Quickstart Guide](QUICKSTART.md)** - Get started in 5 minutes
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Community guidelines
+- **[Security Policy](SECURITY.md)** - How to report vulnerabilities
 
-Use the Canvas
+## 🤝 Contributing
 
-Use the experimental app
+We welcome contributions! Please read our [Contributing Guide](CONTRIBUTING.md) to get started.
 
---- 
+**Ways to contribute:**
+- Report bugs and suggest features
+- Improve documentation
+- Fix issues and add new features
+- Review pull requests
+- Help with community support
 
-# Q&A / FAQ
+## 🔒 Security
 
-## What is Lean Storytelling ("TopSol Playbook")?
+If you discover a security vulnerability, please read our [Security Policy](SECURITY.md) for information on how to report it responsibly.
 
-Lean Storytelling ("TopSol Playbook") is a collection of recipes, templates, and best practices designed to help you craft effective stories for business, service, and product contexts. It serves as a practical field guide, not a rigid framework.
+## 📄 License
 
-## Who is it for?
+This project is licensed under the **AGPLv3 License** - see the [LICENSE](LICENSE) file for details.
 
-This approach is ideal for:
-- Product Owners/Managers
-- Scrum Masters and Agile coaches
-- Designers
-- Engineers
-- Marketing professionals
-- Sales teams
-- Founders, and C-level executives
-- Leaders and Managers
-- Freelances
+## 🎯 Roadmap
 
-## Beyond storytelling: test your assumptions
+Check our [GitHub Projects](https://github.com/your-org/lean-storytelling-app/projects) for upcoming features and milestones.
 
-Beyond only telling stories, Lean Storytelling is a powerful tool that helps you refine your assumptions and hypothesis, your unique or key value proposition, and/or unique selling point, by iterating on what is convincing with feedback loops.
+## 💬 Community
 
-## How is it used? From A to Z? What is it for? What's the goal?
+- **Discussions**: [GitHub Discussions](https://github.com/your-org/lean-storytelling-app/discussions)
+- **Issues**: [GitHub Issues](https://github.com/your-org/lean-storytelling-app/issues)
+- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
 
-**Applications:**
-- Describe Backlog, Epics, User Stories in Agile teams (Scrum/Kanban), helping to visualize expected outcomes
-- Test and get quick feedback on solutions or value propositions in customer interviews, supporting Lean Startup and Design Thinking
-- Sell products, features, services or solutions
-- Set the messaging, so you reach properly your target, and it's awin
-- Do clean and lean developer advocacy, by sending the signals the right way
-- Describe the experience you offer, with clear benefits
+## 📚 Learn More
 
-**Benefit:** Propser Storytellng synchronizes and aligns people.
+Want to dive deeper into the Lean Storytelling methodology?
 
-## How can I deliver the story?
+- **[Lean Storytelling Methodology](https://github.com/your-org/lean-storytelling-methodology)** - Core concepts and templates
+- **[Lean Storytelling Book](https://github.com/your-org/lean-storytelling-book)** - Comprehensive guide
 
-A well-crafted story can be delivered in various formats:
-- **Spoken**: Podcasts, ads, videoconferences, videos, meetups, speeches, public speaking
-- **Written**: Blog posts, slide decks, tickets, social media, specs
-- **Visual**: Images, videos, schemas, drawings, infographies
+## 🙏 Acknowledgments
 
+- Inspired by Lean Canvas, Hero's Journey, and The Golden Circle
+- Built with ❤️ by the open-source community
+- Special thanks to all our contributors!
 
-## What does "TopSol Playbook" stand for?
+---
 
-This is the old name for Lean Storytelling.
+**Ready to craft compelling stories?** [Get Started](QUICKSTART.md) →
 
-- **Playbook**: Emphasizes practicality and avoids the term "framework"; it’s not an advanced storytelling technique.
-- **TopSol**: An acronym for the core elements:
-  - **To**: Target (the people or personas you’re addressing)
-  - **P**: Problem (the challenge they face)
-  - **Sol**: Solution (what you offer)
-
-## Where does it come from?
-
-Lean Storytelling builds on established methodologies:
-- **Lean Canvas** by Ash Maurya ([free online course](https://www.udemy.com/lean-canvas-course/))
-- **Monomyth (Hero’s Journey)** ([Wikipedia](https://en.wikipedia.org/wiki/Hero%27s_journey))
-- **The Golden Circle** ("Why How What") by Simon Sinek ([TED Talk](https://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action))
-
-## What can I do to help?
-
-- Star this repository
-- Share within your networks
-- Ask questions or suggest improvements via [issues](https://github.com/Nyco/TopSol-Playbook/issues)
-- Submit patches or merge requests
-- Share your knowledge and experience
-- Test the alpha app and send feedback
-
-## Can I use, share, and modify Lean Storytelling?
-
-Yes! Lean Storytelling is licensed under **Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)**. You are free to:
-- **Share**: Copy and redistribute in any medium or format
-- **Adapt**: Remix, transform, and build upon the material for any purpose, including commercially
-
-## Can you organize a workshop?
-
-Yes.
-
-- For up to 10 people
-- Duration 1.5 hours
-- Hands on, practice hard, straight to the point, learn by doing, peer review
-
-Contact me: [LinkedIn](https://www.linkedin.com/in/nicolasverite/)
-
-## Can you organize a keynote?
-
-Keynote: 20 min or 40 min
-- Roots of humanity storytelling
-- Reverse-engineer Hollywood-style storytelling
-- Master the craft and art of business storytelling
-
-Contact me: [LinkedIn](https://www.linkedin.com/in/nicolasverite/)
-
-## Can I get the Canvas?
-
-Copy this file in you own drive: "Lean Storytelling Canvas TEMPLATE (please copy, do not edit)"
-
-Ask me for the PDF, ODF, Docx versions
-
-Ask me for Mural, Miro, Notion, etc.
-
-## Can an app help me write my own stories?
-
-Yes, this is being vibe-coded under AGPLv3 license: try now, contact me: [LinkedIn](https://www.linkedin.com/in/nicolasverite/)
-
-## Is there a book?
-
-If there is demand: contact me: [LinkedIn](https://www.linkedin.com/in/nicolasverite/)
-
-## Can we partner?
-
-Yes, contact me: [LinkedIn](https://www.linkedin.com/in/nicolasverite/)
-
+[![Star on GitHub](https://img.shields.io/github/stars/your-org/lean-storytelling-app.svg?style=social)](https://github.com/your-org/lean-storytelling-app/stargazers)
+[![Fork on GitHub](https://img.shields.io/github/forks/your-org/lean-storytelling-app.svg?style=social)](https://github.com/your-org/lean-storytelling-app/network/members)

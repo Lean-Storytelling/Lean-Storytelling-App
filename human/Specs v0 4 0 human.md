@@ -50,6 +50,10 @@ Acceptance criteria:
 
 # Create specifications for "Spec Kit"
 
+Read this current file: Specs v0 4 0 human.md
+Read the other file: Specs v0 4 0 detailed.md
+Write to a new file: Specs v0 4 0 speckit.md
+
 ## Review the top-down UX/UI workflow
 
 Goals:

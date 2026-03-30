@@ -42,6 +42,8 @@ All contributions are Markdown edits. When adding new `docs/` pages, list them i
 - Client-side sessionStorage for dirty queue; no new storage (004-story-builder-polish)
 - JavaScript ES2020, HTML5, CSS3 — no transpilation, no bundler + None — zero runtime dependencies (005-wave-step-labels)
 - N/A — this feature touches only rendering logic (005-wave-step-labels)
+- Node.js 20 LTS (backend) + Vanilla JS ES2020 (frontend) + Fastify 5.2.1, `@fastify/jwt`, `@fastify/cookie`, `@fastify/static`, `@fastify/cors`, `postgres` v3.4.5, Resend — **no new dependencies** (006-extend-deliver-feedback)
+- PostgreSQL 16 (three new tables: `story_extensions`, `story_deliveries`, `story_feedbacks`) + `localStorage` (sidebar toggle state) (006-extend-deliver-feedback)
 
 ## Recent Changes
 - 003-v03-public-app: Implemented full v0.3 — Node.js/Fastify backend, PostgreSQL, magic link auth, JWT httpOnly cookie, Stories + Versioning sidebar, auto-save with offline queue, sessionStorage migration on login, onboarding/profile modals, account deletion, Docker Compose stack
