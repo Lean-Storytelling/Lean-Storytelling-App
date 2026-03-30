@@ -14,6 +14,7 @@ Now:
 # Goals
 
 High-level:
+- Sync repos
 - Create a new branch for a new version v0.4.0
 - Refactor the repository: reorient it from doc to code
 - Create specifications for "Spec Kit":
