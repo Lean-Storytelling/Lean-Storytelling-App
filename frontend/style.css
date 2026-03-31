@@ -1170,3 +1170,591 @@ button:active {
   color: var(--color-text-muted);
   flex-shrink: 0;
 }
+
+/* ============================================================
+   v0.4.0 — APP SHELL REDESIGN (T014)
+   ============================================================ */
+
+/* Sidebar toggle button in app header */
+.sidebar-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  line-height: 1;
+  flex-shrink: 0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.sidebar-toggle-btn:hover {
+  background: var(--color-blue-50);
+  color: var(--color-primary);
+}
+
+/* Breadcrumb in header */
+.breadcrumb-sep {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+.app-breadcrumb {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* App layout: sidebar + main canvas */
+.app-layout {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Sidebar (v0.4 — positioned in flow, not fixed) */
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  height: 100%;
+  background: var(--color-surface);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: width var(--transition-base), min-width var(--transition-base);
+  flex-shrink: 0;
+}
+
+/* Collapsed sidebar → icon-only rail */
+.sidebar--collapsed {
+  width: 48px;
+  min-width: 48px;
+}
+
+/* Nav items */
+.nav-items {
+  padding: var(--space-3) 0;
+  flex-shrink: 0;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  margin: 0 var(--space-2);
+  white-space: nowrap;
+  overflow: hidden;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.nav-item:hover {
+  background: var(--color-blue-50);
+  color: var(--color-primary);
+}
+.nav-item--active {
+  background: var(--color-blue-50);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+/* Hide text labels in rail mode */
+.sidebar--collapsed .nav-items,
+.sidebar--collapsed .sidebar-stories {
+  display: none;
+}
+
+/* Nav separator */
+.nav-separator {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+  flex-shrink: 0;
+}
+.sidebar--collapsed .nav-separator {
+  display: none;
+}
+
+/* My Stories section inside sidebar */
+.sidebar-stories {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Rail button (visible only when collapsed) */
+.rail-stories-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-3) 0;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.sidebar--collapsed .rail-stories-btn {
+  display: flex;
+}
+.rail-stories-btn:hover {
+  background: var(--color-blue-50);
+  color: var(--color-primary);
+}
+
+/* Main canvas */
+.main-canvas {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Section visibility */
+.section {
+  display: none;
+  flex: 1;
+  overflow: hidden;
+  flex-direction: column;
+  min-height: 0;
+}
+.section--active {
+  display: flex;
+}
+
+/* Build section: keep existing app-container layout */
+#section-build {
+  flex-direction: column;
+}
+#section-build .app-container {
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Inline sync indicator for new sections */
+.sync-indicator-inline {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-left: var(--space-3);
+}
+
+/* ============================================================
+   v0.4.0 — SECTION SHARED STYLES
+   ============================================================ */
+
+.section-utility-bar {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: var(--font-size-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.section > .selector-wrap,
+.section > .section-preview {
+  flex-shrink: 0;
+}
+
+.selector-wrap {
+  padding: var(--space-4) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-surface);
+  flex-shrink: 0;
+}
+
+.selector-wrap label {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.selector-wrap select {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  padding: var(--space-1) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.section-preview {
+  padding: var(--space-3) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+  background: var(--color-bg);
+  max-height: 180px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.section-preview__empty {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+}
+
+.section-preview__field {
+  margin-bottom: var(--space-2);
+}
+
+.section-preview__label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.section-preview__text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.section-error {
+  color: #dc2626;
+  font-size: var(--font-size-sm);
+  padding: var(--space-4) var(--space-6);
+}
+
+/* Section scrollable content area */
+#extend-content,
+#deliver-content,
+#feedback-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-5) var(--space-6);
+  min-height: 0;
+}
+
+.field-group {
+  margin-bottom: var(--space-5);
+}
+
+.subsection-heading {
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.field-advice-text {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-2);
+  line-height: var(--line-height-base);
+}
+
+.section-textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+  outline: none;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.section-textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* ============================================================
+   v0.4.0 — EXTEND STORY (T026)
+   ============================================================ */
+
+/* Advice banner */
+.advice-banner {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  background: var(--color-blue-50);
+  border: 1px solid var(--color-blue-100);
+  border-radius: var(--radius-sm);
+  padding: var(--space-3) var(--space-4);
+  margin-bottom: var(--space-5);
+  line-height: var(--line-height-base);
+}
+
+/* Element card grid */
+.element-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.element-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  transition: border-color var(--transition-fast);
+}
+
+.element-card:hover {
+  border-color: var(--color-blue-400);
+}
+
+.element-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.element-card__summary,
+.element-card__goal,
+.element-card__advice {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.element-card__goal {
+  color: var(--color-text);
+}
+
+.element-card__add {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.element-card__textarea {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: var(--font-size-sm);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  resize: vertical;
+  outline: none;
+  transition: border-color var(--transition-fast);
+}
+.element-card__textarea:focus {
+  border-color: var(--color-accent);
+}
+
+.element-card__remove {
+  margin-top: var(--space-1);
+  color: #dc2626;
+  border-color: #fca5a5;
+}
+.element-card__remove:hover {
+  background: #fee2e2;
+}
+
+.element-card--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+.element-card-grid--disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+/* Placement widget */
+.placement-widget {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-5);
+}
+
+.placement-zone {
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  min-height: 40px;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.placement-zone--dragover {
+  border-color: var(--color-accent);
+  background: var(--color-blue-50);
+}
+
+.placement-zone__label {
+  font-size: var(--font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-1);
+}
+
+/* Extension chips */
+.extension-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--color-blue-100);
+  border: 1px solid var(--color-blue-400);
+  border-radius: 99px;
+  padding: 2px var(--space-3);
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  cursor: grab;
+  margin: var(--space-1) var(--space-1) var(--space-1) 0;
+  user-select: none;
+  transition: opacity var(--transition-fast);
+}
+
+.extension-chip--dragging {
+  opacity: 0.4;
+}
+
+.extension-chip__label {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.chip-arrows {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.chip-arrow {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  padding: 0 2px;
+  line-height: 1;
+  transition: color var(--transition-fast);
+}
+.chip-arrow:hover {
+  color: var(--color-primary);
+}
+
+/* Blend scaffold */
+.blend-scaffold {
+  position: relative;
+  border: 1.5px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: var(--space-5);
+}
+
+.blend-scaffold__inner {
+  padding: var(--space-5);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.coming-soon-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: rgba(247, 248, 250, 0.7);
+  pointer-events: all;
+}
+
+/* ============================================================
+   v0.4.0 — DELIVER STORY (T034)
+   ============================================================ */
+
+.format-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.format-card {
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  cursor: pointer;
+  transition: border-color var(--transition-fast), background var(--transition-fast);
+}
+
+.format-card:hover {
+  border-color: var(--color-blue-400);
+  background: var(--color-blue-50);
+}
+
+.format-card--selected {
+  border-color: var(--color-accent);
+  background: var(--color-blue-50);
+}
+
+.format-card__title {
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.format-card__summary,
+.format-card__goal,
+.format-card__advice {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.format-card__goal {
+  color: var(--color-text);
+}
+
+/* ============================================================
+   v0.4.0 — FEEDBACK STORY (T041)
+   ============================================================ */
+
+/* Feedback uses the same .field-group / .section-textarea / .subsection-heading
+   classes as Deliver — no additional rules needed beyond shared styles above. */

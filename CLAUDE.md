@@ -42,8 +42,11 @@ All contributions are Markdown edits. When adding new `docs/` pages, list them i
 - Client-side sessionStorage for dirty queue; no new storage (004-story-builder-polish)
 - JavaScript ES2020, HTML5, CSS3 — no transpilation, no bundler + None — zero runtime dependencies (005-wave-step-labels)
 - N/A — this feature touches only rendering logic (005-wave-step-labels)
+- Node.js 20 LTS (backend) + Vanilla JS ES2020 (frontend) + Fastify 5.2.1, `@fastify/jwt`, `@fastify/cookie`, `@fastify/static`, `@fastify/cors`, `postgres` v3.4.5, Resend — **no new dependencies** (006-extend-deliver-feedback)
+- PostgreSQL 16 (three new tables: `story_extensions`, `story_deliveries`, `story_feedbacks`) + `localStorage` (sidebar toggle state) (006-extend-deliver-feedback)
 
 ## Recent Changes
+- 006-extend-deliver-feedback: Implemented full v0.4.0 — two-column app shell (sticky header, collapsible sidebar + nav rail, Build/Extend/Deliver/Feedback sections), three new full-stack features (Extend Story with element cards + placement widget + DnD; Deliver Story with audience/context/format; Feedback Story with third-party + self-impression), three new DB tables (`story_extensions`, `story_deliveries`, `story_feedbacks`), three new backend route files (`extensions.js`, `deliveries.js`, `feedbacks.js`), four new frontend modules (`nav.js`, `extend.js`, `deliver.js`, `feedback.js`), two new shared components (`story-selector.js` — story+version picker; `story-preview.js` — read-only canonical-order preview), Blend scaffold (non-interactive, Coming Soon), localStorage sidebar state, repository community files (AGPLv3 LICENSE, CODE_OF_CONDUCT.md, CONTRIBUTING.md, SECURITY.md), README rewritten for developers
 - 003-v03-public-app: Implemented full v0.3 — Node.js/Fastify backend, PostgreSQL, magic link auth, JWT httpOnly cookie, Stories + Versioning sidebar, auto-save with offline queue, sessionStorage migration on login, onboarding/profile modals, account deletion, Docker Compose stack
 - 002-full-story-builder: Implemented full v0.2 — all 3 waves active, wave router, real-time preview, unified field template with foldable advice, story title widget, accessible progress bars, self-hosted Playfair Display + DM Sans fonts
 - 001-basic-story-form: Added HTML5, CSS3, JavaScript ES2020 (no transpilation, no bundler) + None — zero runtime dependencies

@@ -9,6 +9,9 @@ import authRoutes from './routes/auth.js'
 import userRoutes from './routes/users.js'
 import storyRoutes from './routes/stories.js'
 import versionRoutes from './routes/versions.js'
+import extensionRoutes from './routes/extensions.js'
+import deliveryRoutes from './routes/deliveries.js'
+import feedbackRoutes from './routes/feedbacks.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 // In Docker: __dirname = /app/src, frontend mounted at /app/frontend
@@ -35,6 +38,9 @@ await fastify.register(authRoutes, { prefix: '/api/auth' })
 await fastify.register(userRoutes, { prefix: '/api' })
 await fastify.register(storyRoutes, { prefix: '/api' })
 await fastify.register(versionRoutes, { prefix: '/api' })
+await fastify.register(extensionRoutes, { prefix: '/api' })
+await fastify.register(deliveryRoutes, { prefix: '/api' })
+await fastify.register(feedbackRoutes, { prefix: '/api' })
 
 // SPA fallback — serve index.html for any non-API GET
 fastify.setNotFoundHandler(async (request, reply) => {
