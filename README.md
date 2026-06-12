@@ -27,3 +27,9 @@ Contributions are welcome — bug reports, documentation improvements, and code 
 ## License
 
 AGPLv3 — see [LICENSE](LICENSE) for details.
+
+## AI Warning
+
+The code is bootstrapped by vibe-coding, in order to prototype. 
+I have limited tech competencies, consequently low capacity to review code and architecture.
+Thus, this code is trashable as soon as we can have true human contributors.
